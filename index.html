@@ -19,7 +19,7 @@
   </div>
 
   <a-scene
-    mindar-image="imageTargetSrc: assets/target/targets.mind; autoStart: true; uiScanning: yes;"
+    mindar-image="imageTargetSrc: assets/targets/targets.mind; autoStart: true; uiScanning: yes;"
     color-space="sRGB"
     renderer="colorManagement: true, physicallyCorrectLights"
     vr-mode-ui="enabled: false"
@@ -34,54 +34,71 @@
     <!-- Target 0 = imagem do cartão compilada em targets.mind -->
     <a-entity mindar-image-target="targetIndex: 0" id="target">
 
+      <!-- Cabeçalho: nome e área (fixo, sempre visível) -->
+      <a-entity position="0 1.0 0">
+        <a-plane color="#0f172a" opacity="0.9" width="1.3" height="0.35" position="0 0 0"></a-plane>
+        <a-plane color="#38bdf8" opacity="0.9" width="1.34" height="0.39" position="0 0 -0.005"></a-plane>
+        <a-text value="DAVI MAZOTI" color="#38bdf8" width="1.15" align="center" position="0 0.08 0.01"></a-text>
+        <a-text value="Análise e Desenvolvimento de Sistemas" color="#FFFFFF" width="1.0" align="center" position="0 -0.08 0.01"></a-text>
+      </a-entity>
+
       <!-- Bloco 1: Sobre mim -->
       <a-entity
         id="bloco-sobre-mim"
-        position="0 0.4 0"
+        position="0 0.55 0"
         rotation="0 0 0"
         scale="1 1 1"
       >
-        <a-plane color="#111827" opacity="0.85" width="1" height="0.35" position="0 0 0"></a-plane>
+        <a-plane color="#1e293b" opacity="0.9" width="1.3" height="0.5" position="0 0 0"></a-plane>
+        <a-plane color="#38bdf8" opacity="0.9" width="1.34" height="0.54" position="0 0 -0.005"></a-plane>
+        <a-text value="SOBRE MIM" color="#38bdf8" width="1.15" align="center" position="0 0.17 0.01"></a-text>
         <a-text
-          value="DAVI MAZOTI\nAnálise e Desenvolvimento de Sistemas\n\nSOBRE MIM\nEstudante de ADS com foco em desenvolvimento web e redes.\nGosto de projetos que unem lógica de programação e boas práticas de organização de código."
+          value="Estudante de ADS com foco em\ndesenvolvimento web e redes.\nGosto de unir lógica de programação\ncom boas práticas de organização."
           color="#FFFFFF"
-          width="1.6"
+          width="1.1"
+          wrap-count="28"
           align="center"
-          position="0 0 0.01"
+          position="0 -0.05 0.01"
         ></a-text>
       </a-entity>
 
       <!-- Bloco 2: Habilidades -->
       <a-entity
         id="bloco-habilidades"
-        position="0 0 0"
+        position="0 -0.05 0"
         rotation="0 0 0"
-        scale="0.9 0.9 0.9"
+        scale="0.95 0.95 0.95"
       >
-        <a-plane color="#1f2937" opacity="0.85" width="1" height="0.35" position="0 0 0"></a-plane>
+        <a-plane color="#1e293b" opacity="0.9" width="1.3" height="0.6" position="0 0 0"></a-plane>
+        <a-plane color="#38bdf8" opacity="0.9" width="1.34" height="0.64" position="0 0 -0.005"></a-plane>
+        <a-text value="HABILIDADES" color="#38bdf8" width="1.15" align="center" position="0 0.22 0.01"></a-text>
         <a-text
-          value="HABILIDADES\nHTML, CSS e JavaScript\nMySQL e modelagem de banco de dados\nGit e GitHub\nFundamentos de redes (VLAN, DHCP, IPv4/IPv6)\nLógica de programação em Java"
+          value="HTML, CSS e JavaScript\nMySQL e modelagem de banco de dados\nGit e GitHub\nRedes (VLAN, DHCP, IPv4/IPv6)\nLógica de programação em Java"
           color="#FFFFFF"
-          width="1.6"
+          width="1.1"
+          wrap-count="30"
           align="center"
-          position="0 0 0.01"
+          position="0 -0.03 0.01"
         ></a-text>
       </a-entity>
 
       <!-- Bloco 3: Contato -->
       <a-entity
         id="bloco-contato"
-        position="0 -0.4 0"
+        position="0 -0.65 0"
         rotation="0 0 0"
         scale="1 1 1"
       >
-        <a-plane color="#111827" opacity="0.85" width="1" height="0.35" position="0 0 0"></a-plane>
+        <a-plane color="#1e293b" opacity="0.9" width="1.3" height="0.4" position="0 0 0"></a-plane>
+        <a-plane color="#38bdf8" opacity="0.9" width="1.34" height="0.44" position="0 0 -0.005"></a-plane>
+        <a-text value="CONTATO" color="#38bdf8" width="1.15" align="center" position="0 0.12 0.01"></a-text>
         <a-text
-          value="CONTATO\ndavi.mazoti@email.com\ngithub.com/davimazoti\nlinkedin.com/in/davimazoti"
+          value="davi.mazoti@email.com\ngithub.com/davimazoti\nlinkedin.com/in/davimazoti"
           color="#FFFFFF"
-          width="1.6"
+          width="1.1"
+          wrap-count="28"
           align="center"
-          position="0 0 0.01"
+          position="0 -0.06 0.01"
         ></a-text>
       </a-entity>
 
