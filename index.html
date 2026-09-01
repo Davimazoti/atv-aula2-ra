@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartão Profissional em RA</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- A-Frame e MindAR (image tracking) -->
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+</head>
+<body>
+
+  <!-- Aviso de carregamento/instrução exibido antes do reconhecimento do target -->
+  <div id="overlay">
+    <p>Aponte a câmera para o cartão profissional</p>
+  </div>
+
+  <a-scene
+    mindar-image="imageTargetSrc: assets/targets/targets.mind; autoStart: true; uiScanning: yes;"
+    color-space="sRGB"
+    renderer="colorManagement: true, physicallyCorrectLights"
+    vr-mode-ui="enabled: false"
+    device-orientation-permission-ui="enabled: true"
+  >
+    <a-assets>
+      <!-- Fontes/imagens adicionais podem entrar aqui, se precisar -->
+    </a-assets>
+
+    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+    <!-- Target 0 = imagem do cartão compilada em targets.mind -->
+    <a-entity mindar-image-target="targetIndex: 0" id="target">
+
+      <!-- Bloco 1: Sobre mim -->
+      <a-entity
+        id="bloco-sobre-mim"
+        position="0 0.4 0"
+        rotation="0 0 0"
+        scale="1 1 1"
+      >
+        <a-plane color="#111827" opacity="0.85" width="1" height="0.35" position="0 0 0"></a-plane>
+        <a-text
+          value="DAVI MAZOTI\nAnálise e Desenvolvimento de Sistemas\n\nSOBRE MIM\nEstudante de ADS com foco em desenvolvimento web e redes.\nGosto de projetos que unem lógica de programação e boas práticas de organização de código."
+          color="#FFFFFF"
+          width="1.6"
+          align="center"
+          position="0 0 0.01"
+        ></a-text>
+      </a-entity>
+
+      <!-- Bloco 2: Habilidades -->
+      <a-entity
+        id="bloco-habilidades"
+        position="0 0 0"
+        rotation="0 0 0"
+        scale="0.9 0.9 0.9"
+      >
+        <a-plane color="#1f2937" opacity="0.85" width="1" height="0.35" position="0 0 0"></a-plane>
+        <a-text
+          value="HABILIDADES\nHTML, CSS e JavaScript\nMySQL e modelagem de banco de dados\nGit e GitHub\nFundamentos de redes (VLAN, DHCP, IPv4/IPv6)\nLógica de programação em Java"
+          color="#FFFFFF"
+          width="1.6"
+          align="center"
+          position="0 0 0.01"
+        ></a-text>
+      </a-entity>
+
+      <!-- Bloco 3: Contato -->
+      <a-entity
+        id="bloco-contato"
+        position="0 -0.4 0"
+        rotation="0 0 0"
+        scale="1 1 1"
+      >
+        <a-plane color="#111827" opacity="0.85" width="1" height="0.35" position="0 0 0"></a-plane>
+        <a-text
+          value="CONTATO\ndavi.mazoti@email.com\ngithub.com/davimazoti\nlinkedin.com/in/davimazoti"
+          color="#FFFFFF"
+          width="1.6"
+          align="center"
+          position="0 0 0.01"
+        ></a-text>
+      </a-entity>
+
+    </a-entity>
+  </a-scene>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
